@@ -1,0 +1,11 @@
+# Define the menu links for this module
+dokk_resource.bookingrequests:
+  title: Booking requests
+  description: 'List of booking requests'
+  parent: system.admin
+  route_name: dokk_resource.bookingrequests
+entity.dokk_resource_booking.collection:
+  title: 'Bookings Listing'
+  description: 'List Bookings'
+  route_name: entity.dokk_resource_booking.collection
+  weight: 10

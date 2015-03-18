@@ -1,0 +1,11 @@
+# All action links for this module
+
+dokk_resource.booking_add:
+  # Which route will be called by the link
+  route_name: dokk_resource.booking_add
+  title: 'Add Booking'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.dokk_resource_booking.collection
+    - entity.dokk_resource_booking.canonical

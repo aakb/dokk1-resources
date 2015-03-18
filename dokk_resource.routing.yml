@@ -1,0 +1,82 @@
+# --- Administration routing ---
+dokk_resource.bookingrequests:
+  path: '/admin/booking/requests'
+  defaults:
+    _controller: '\Drupal\dokk_resource\Controller\DokkResourceController::requests'
+    _title: 'Booking requests'
+  requirements:
+    _permission: 'administer booking settings'
+
+#dokk_resource.bookingsaccepted:
+#  path: '/admin/booking/accepted'
+#  defaults:
+#    _controller: '\Drupal\dokk_resource\Controller\DokkResourceController::accepted'
+#    _title: 'Bookings accepted'
+#  requirements:
+#    _permission: 'access administration pages'
+
+dokk_resource.bookingsdenied:
+  path: '/admin/booking/denied'
+  defaults:
+    _controller: '\Drupal\dokk_resource\Controller\DokkResourceController::denied'
+    _title: 'Bookings denied'
+  requirements:
+    _permission: 'administer booking settings'
+
+dokk_resource.bookingshistory:
+  path: '/admin/booking/history'
+  defaults:
+    _controller: '\Drupal\dokk_resource\Controller\DokkResourceController::history'
+    _title: 'Bookings history'
+  requirements:
+    _permission: 'administer booking settings'
+
+dokk_resource.booking_settings:
+  path: '/admin/booking/settings'
+  defaults:
+    _form: '\Drupal\dokk_resource\Form\BookingSettingsForm'
+    _title: 'Booking Settings'
+  requirements:
+    _permission: 'administer booking settings'
+
+
+# --- Entity related routing ---
+entity.dokk_resource_booking.canonical:
+  path: '/booking/{dokk_resource_booking}'
+  defaults:
+    _entity_view: 'dokk_resource_booking'
+    _title: 'Booking Content'
+  requirements:
+    _entity_access: 'dokk_resource_booking.view'
+
+entity.dokk_resource_booking.collection:
+  path: '/admin/booking/accepted'
+  defaults:
+    _entity_list: 'dokk_resource_booking'
+    _title: 'Booking List'
+  requirements:
+    _permission: 'view booking entity'
+
+dokk_resource.booking_add:
+  path: '/booking/add'
+  defaults:
+    _entity_form: dokk_resource_booking.add
+    _title: 'Add Booking'
+  requirements:
+    _entity_create_access: 'dokk_resource_booking'
+
+entity.dokk_resource_booking.edit_form:
+  path: '/booking/{dokk_resource_booking}/edit'
+  defaults:
+    _entity_form: dokk_resource_booking.edit
+    _title: 'Edit Booking'
+  requirements:
+    _entity_access: 'dokk_resource_booking.edit'
+
+entity.dokk_resource_booking.delete_form:
+  path: '/booking/{dokk_resource_booking}/delete'
+  defaults:
+    _entity_form: dokk_resource_booking.delete
+    _title: 'Delete Booking'
+  requirements:
+    _entity_access: 'dokk_resource_booking.delete'

@@ -1,0 +1,9 @@
+name: Dokk resource
+type: module
+description: 'Provides booking entiry and administration related to booking.'
+package: Dokk1 custom
+core: 8.x
+# These modules are required by the tests, must be available at bootstrap time
+dependencies:
+  - options
+  - entity_reference

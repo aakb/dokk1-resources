@@ -1,0 +1,49 @@
+# Define the 'local' links for the module
+
+# Administration related local tasks
+dokk_resource.bookingrequests:
+  title: Booking requests
+  route_name: dokk_resource.bookingrequests
+  base_route: dokk_resource.bookingrequests
+  weight: 0
+
+dokk_resource.bookingsaccepted:
+  title: Bookings accepted
+  route_name: entity.dokk_resource_booking.collection
+  base_route: dokk_resource.bookingrequests
+  weight: 1
+
+dokk_resource.bookingsdenied:
+  title: Bookings denied
+  route_name: dokk_resource.bookingsdenied
+  base_route: dokk_resource.bookingrequests
+  weight: 2
+
+dokk_resource.bookingshistory:
+  title: Bookings history
+  route_name: dokk_resource.bookingshistory
+  base_route: dokk_resource.bookingrequests
+  weight: 3
+
+dokk_resource.bookingsettings:
+  route_name: dokk_resource.booking_settings
+  title: Settings
+  base_route: dokk_resource.bookingrequests
+  weight: 4
+
+# Entity related local tasks
+booking.view:
+  route_name: entity.dokk_resource_booking.canonical
+  base_route: entity.dokk_resource_booking.canonical
+  title: View
+
+booking.page_edit:
+  route_name: entity.dokk_resource_booking.edit_form
+  base_route: entity.dokk_resource_booking.canonical
+  title: Edit
+
+booking.delete_confirm:
+  route_name:  entity.dokk_resource_booking.delete_form
+  base_route:  entity.dokk_resource_booking.canonical
+  title: Delete
+  weight: 10
